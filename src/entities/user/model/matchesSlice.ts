@@ -1,5 +1,5 @@
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
-import type { IMatch, IMatchesState } from "../types";
+import type { AddMatchPayload, IMatchesState } from "../types";
 
 const initialSate: IMatchesState = {
    matches: []
@@ -9,12 +9,15 @@ const matchesSlice = createSlice({
    name: 'matches',
    initialState: initialSate,
    reducers: {
-      addToMatches: (state, action: PayloadAction<IMatch>) => {
+      addToMatches: (state, action: PayloadAction<AddMatchPayload>) => {
          const itemToMatch = action.payload;
          const isAlreadyMatched = state.matches.some((match) => match.id === itemToMatch.id);
 
          if (!isAlreadyMatched) {
-            state.matches.push(itemToMatch);
+            state.matches.push({
+               ...itemToMatch,
+               matchDate: Date.now().toString()
+            });
          }
       },
       removeFromMatches: (state, action: PayloadAction<{ id: string }>) => {

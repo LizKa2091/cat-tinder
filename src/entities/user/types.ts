@@ -9,12 +9,14 @@ export interface IDuckUser {
 export interface IMatch {
    id: string;
    duck: IDuckUser;
-   matchDate: Date;
+   matchDate: string;
 }
 
 export interface IMatchesState {
    matches: IMatch[];
 }
+
+export type AddMatchPayload = Omit<IMatch, 'matchDate'>;
 
 export type Gender = 'male' | 'female';
 
