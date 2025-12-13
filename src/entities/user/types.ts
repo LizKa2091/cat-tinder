@@ -23,3 +23,17 @@ export interface IUserData {
    gender: Gender;
    country: string;
 }
+
+export interface IMessageData {
+   id: string;
+   sender: string;
+   receiver: string;
+   timeStamp: string;
+   message: string;
+}
+
+export interface IMessagesState {
+   messages: IMessageData[];
+}
+
+export type ISendMessagePayload = Omit<IMessageData, 'id' | 'date'>;
