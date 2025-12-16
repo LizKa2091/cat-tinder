@@ -19,6 +19,13 @@ export interface IUserData {
    country: string;
 }
 
+export interface IDialoguesStateItem {
+   id: string;
+   dialogueWith: string;
+   dialogueWithIconUrl: string;
+   messagesData: IMessageData[];
+}
+
 export interface IMessageData {
    id: string;
    sender: string;
@@ -28,7 +35,13 @@ export interface IMessageData {
 }
 
 export interface IMessagesState {
-   messages: IMessageData[];
+   messages: IDialoguesStateItem[];
 }
 
-export type ISendMessagePayload = Omit<IMessageData, 'id' | 'timeStamp'>;
+// export type ISendMessagePayload = Omit<IMessageData, 'id' | 'timeStamp'>;
+export interface ISendMessagePayload {
+   sender: string;
+   receiver: string;
+   message: string;
+   receiverIconUrl: string;
+}
