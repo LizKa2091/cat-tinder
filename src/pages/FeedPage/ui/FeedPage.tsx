@@ -5,7 +5,7 @@ import { useCat } from '@entities/cat/model/useCat';
 import { useAppDispatch } from '@shared/store/hooks';
 import { addToMatches } from '@entities/user/model/matchesSlice';
 
-const FeedPage: FC = () => {
+export const FeedPage: FC = () => {
    const { data, isLoading, isError } = useCat();
    const dispatch = useAppDispatch();
 
@@ -26,5 +26,3 @@ const FeedPage: FC = () => {
       />
    )
 }
-
-export default FeedPage;
