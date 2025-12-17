@@ -12,7 +12,7 @@ interface IDialogueItemProps {
    onClick: () => void;
 }
 
-export const DialogueItem: FC<IDialogueItemProps> = ({ dialogueId, dialogueWith, iconUrl }) => {
+export const DialogueItem: FC<IDialogueItemProps> = ({ dialogueId, dialogueWith, iconUrl, onClick }) => {
    const lastMessageDate = useLastMessageDate(dialogueId);
 
    if (!lastMessageDate) {
@@ -20,7 +20,7 @@ export const DialogueItem: FC<IDialogueItemProps> = ({ dialogueId, dialogueWith,
    }
 
    return (
-      <div className={styles.container}>
+      <div onClick={onClick} className={styles.container}>
          <img src={iconUrl} alt={dialogueWith} className={styles.img} />
          <p>{dialogueWith}</p>
          <p>{formatMessageDate(lastMessageDate)}</p>
