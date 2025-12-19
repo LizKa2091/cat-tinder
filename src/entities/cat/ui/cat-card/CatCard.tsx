@@ -1,9 +1,9 @@
 import { type FC } from 'react';
 
 import { ActionButton } from '@shared/ui/action-button';
-import type { ICatItem } from '../types';
+import type { ICatItem } from '../../types';
 
-import styles from './CardCard.module.scss';
+import styles from './CatCard.module.scss';
 
 interface ICatCardProps {
    catItem: ICatItem;
