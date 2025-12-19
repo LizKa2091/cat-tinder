@@ -1,9 +1,9 @@
-import { type FC } from 'react';
+import { useEffect, useState, type FC } from 'react';
 
 import { ActionButton } from '@shared/ui/action-button';
-import type { ICatItem } from '../types';
+import type { ICatItem } from '../../types';
 
-import styles from './CardCard.module.scss';
+import styles from './CatCard.module.scss';
 
 interface ICatCardProps {
    catItem: ICatItem;
@@ -13,9 +13,18 @@ interface ICatCardProps {
 }
 
 export const CatCard: FC<ICatCardProps> = ({ catItem, onMatch, onMessage, onSkip }) => {
+   const [isMatched, setIsMatched] = useState<boolean>(false);
    const { title, first, last } = catItem.catData.name;
    const catFullName: string = title + ' ' + first + ' ' + last;
    
+   useEffect(() => {
+   })
+
+   const handleMatch = () => {
+      onMatch();
+      setIsMatched(true);
+   }
+
    return (
       <div className={styles.card}>
          <div className={styles.cardData}>
@@ -27,7 +36,7 @@ export const CatCard: FC<ICatCardProps> = ({ catItem, onMatch, onMessage, onSkip
             <p className={styles.name}>{catFullName}</p>
          </div>
          <div className={styles.cardActions}>
-            <ActionButton type='match' onClick={onMatch} />
+            <ActionButton type='match' onClick={handleMatch} disabled={isMatched} />
             <ActionButton type='message' onClick={onMessage} />
             <ActionButton text='Дальше' onClick={onSkip} />
          </div>
