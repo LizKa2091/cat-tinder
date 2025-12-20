@@ -3,7 +3,6 @@
 ![Redux Toolkit](https://img.shields.io/badge/Redux_Toolkit-2.11.1-764ABC?logo=redux&logoColor=white)
 ![React Query](https://img.shields.io/badge/React_Query-5.90.12-FF4154?logo=react-query)
 ![React Router DOM](https://img.shields.io/badge/React_Router_DOM-7.10.1-CA4245?logo=react-router)
-![React Router](https://img.shields.io/badge/React_Router_DOM-7.7.0-CA4245?logo=react-router)
 ![React Swipeable](https://img.shields.io/badge/React_Swipeable-7.0.2-61DAFB?logo=react)
 ![SCSS](https://img.shields.io/badge/SCSS-1.96.0-CC6699?logo=sass)
 ![Vite](https://img.shields.io/badge/Vite-7.2.4-646CFF?logo=vite) 
